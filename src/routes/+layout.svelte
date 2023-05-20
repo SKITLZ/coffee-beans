@@ -1,5 +1,13 @@
 <script>
+  import PageHeader from './PageHeader.svelte';
+  import PageFooter from './PageFooter.svelte';
   import '../app.css';
 </script>
 
-<slot />
+<PageHeader />
+<main class="page-main">
+  <div>
+    <slot />
+  </div>
+</main>
+<PageFooter />

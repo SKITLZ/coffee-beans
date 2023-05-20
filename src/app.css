@@ -1,1 +1,28 @@
 @import 'normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Sans-Serif;
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.main-container {
+  max-width: 600px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.page-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
