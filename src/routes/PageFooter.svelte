@@ -1,11 +1,11 @@
-<header class="footer">
+<footer class="footer">
   <div class="main-container">
     <p class="par">
       Made for <a href="https://wisebits.com/" target="__blank">Wisebits</a>
     </p>
     <p class="par">SvelteKit, TypeScript, LESS</p>
   </div>
-</header>
+</footer>
 
 <style lang="less">
   .footer {
