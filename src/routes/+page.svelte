@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import CoffeeBean from '$lib/components/CoffeeBean.svelte';
+  import CoffeeBeanSkeleton from '$lib/components/CoffeeBeanSkeleton.svelte';
   import AppButton from '$lib/components/common/AppButton.svelte';
   import { fetchCoffee, fetchImg } from '$lib/api/coffee';
   import { prepareCoffee } from '$lib/components/helpers';
@@ -41,6 +42,11 @@
         <CoffeeBean {...coffee} />
       </li>
     {/each}
+    {#if isLoading}
+      <li class="coffee-bean">
+        <CoffeeBeanSkeleton />
+      </li>
+    {/if}
   </ul>
   <div class="button-container">
     <AppButton ariaLabel="Load more coffee" disabled={isLoading} on:click={getCoffee}>Load more</AppButton>
