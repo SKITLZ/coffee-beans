@@ -27,7 +27,7 @@
       const coffee = prepareCoffee(res, img);
       coffeeList = [...coffeeList, coffee];
     } catch (error) {
-      console.error;
+      console.error(error);
     } finally {
       isLoading = false;
       timeout = setInterval(getCoffee, LOAD_INTERVAL_MS);
