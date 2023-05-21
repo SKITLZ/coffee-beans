@@ -6,7 +6,7 @@ export interface Sort {
 }
 
 export interface Coffee {
-  id: number;
+  uid: string;
   origin: string;
   blendName: string;
   variety: string;

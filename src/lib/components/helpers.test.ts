@@ -25,7 +25,7 @@ describe('prepareCoffee', () => {
   it('correct structure', () => {
     coffeeArr.forEach((coffee, idx) => {
       const responseCoffee = coffeeResponses[idx];
-      expect(coffee.id === responseCoffee.id).toBe(true);
+      expect(coffee.uid === responseCoffee.uid).toBe(true);
       expect(coffee.blendName === responseCoffee['blend_name']).toBe(true);
       expect(coffee.origin === responseCoffee.origin).toBe(true);
       expect(coffee.variety === responseCoffee.variety).toBe(true);

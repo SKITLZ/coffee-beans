@@ -23,9 +23,9 @@ export const getSorts = (notes: string): Sort[] => {
 
 export const prepareCoffee = (response: FetchCoffeeResponse, img?: Blob): Coffee => {
   const sorts = getSorts(response.notes);
-  const { id, blend_name: blendName, origin, variety, intensifier } = response;
+  const { uid, blend_name: blendName, origin, variety, intensifier } = response;
   const coffee: Coffee = {
-    id,
+    uid,
     blendName,
     origin,
     variety,

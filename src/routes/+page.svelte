@@ -37,7 +37,7 @@
 
 <div class="page main-container">
   <ul class="coffee-list">
-    {#each coffeeList as coffee (coffee.id)}
+    {#each coffeeList as coffee (coffee.uid)}
       <li class="coffee-bean">
         <CoffeeBean {...coffee} />
       </li>
