@@ -1,14 +1,14 @@
 <div class="coffee-bean-skeleton">
   <div class="top">
-    <span class="skeleton intensifier" />
+    <span class="intensifier" />
   </div>
   <div class="main">
-    <p class="skeleton origin" />
-    <p class="skeleton blend-name" />
-    <p class="skeleton variety" />
+    <p class="origin" />
+    <p class="blend-name" />
+    <p class="variety" />
     <ul class="sort-list">
       {#each [1, 2, 3, 4, 5] as li}
-        <li class="skeleton sort" />
+        <li class="sort" />
       {/each}
     </ul>
   </div>
@@ -17,7 +17,6 @@
 <style lang="less">
   @borderRadius: 4px;
   @lineHeight: 1.15;
-
 
   @keyframes skeleton-loading {
     0% {
@@ -37,7 +36,11 @@
     }
   }
 
-  .skeleton {
+  .intensifier,
+  .origin,
+  .blend-name,
+  .variety,
+  .sort {
     animation: skeleton-loading 1s linear infinite alternate;
     border-radius: @borderRadius;
   }

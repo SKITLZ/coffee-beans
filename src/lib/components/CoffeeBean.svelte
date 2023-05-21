@@ -25,7 +25,7 @@
 
 <div class="coffee-bean">
   <div class="top">
-    {#if !img}
+    {#if !imgUrl}
       <picture>
         <source srcset={PLACEHOLDER_IMAGE.AVIF} />
         <source srcset={PLACEHOLDER_IMAGE.WEBP} />
