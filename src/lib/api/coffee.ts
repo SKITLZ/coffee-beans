@@ -1,8 +1,8 @@
 import { get } from './core';
 import type { FetchCoffeeResponse } from './models/coffee';
 
-export const fetchCoffee = async (): Promise<FetchCoffeeResponse> => {
-  return await get('https://random-data-api.com/api/coffee/random_coffee');
+export const fetchCoffee = (): Promise<FetchCoffeeResponse> => {
+  return get('https://random-data-api.com/api/coffee/random_coffee');
 };
 
 export const fetchImg = async (): Promise<Blob> => {
