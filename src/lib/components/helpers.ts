@@ -1,19 +1,16 @@
 import { sortMap, addColor } from '$lib/stores/CoffeeBeanStore';
-import type { Coffee, SortMap, Sort } from './types';
+import type { Coffee, Sort } from './types';
 import type { FetchCoffeeResponse } from '$lib/api/models/coffee';
-
-let sortMapValues: SortMap = {};
-sortMap.subscribe((value) => (sortMapValues = value));
 
 export const generateRandomColor = (): string => `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
-export const prepareCoffee = (response: FetchCoffeeResponse, img?: Blob): Coffee => {
-  const sortNames = response.notes.split(', ');
+export const getSorts = (notes: string): Sort[] => {
+  const sortNames = notes.split(', ');
   const sorts: Sort[] = sortNames.map((name: string) => {
-    if (sortMapValues[name]) {
+    if (sortMap[name]) {
       return {
         label: name,
-        color: sortMapValues[name],
+        color: sortMap[name],
       };
     }
     return {
@@ -21,7 +18,11 @@ export const prepareCoffee = (response: FetchCoffeeResponse, img?: Blob): Coffee
       color: addColor(name),
     };
   });
+  return sorts;
+};
 
+export const prepareCoffee = (response: FetchCoffeeResponse, img?: Blob): Coffee => {
+  const sorts = getSorts(response.notes);
   const { id, blend_name: blendName, origin, variety, intensifier } = response;
   const coffee: Coffee = {
     id,
