@@ -6,16 +6,9 @@ const hexRegx = /^#[0-9a-f]{3,6}$/i;
 
 describe('generateRandomColor', () => {
   it('generatex valid HEX color', () => {
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
-    expect(hexRegx.test(generateRandomColor())).toBe(true);
+    for (let i = 0; i < 100; i++) {
+      expect(hexRegx.test(generateRandomColor())).toBe(true);
+    }
   });
 });
 
